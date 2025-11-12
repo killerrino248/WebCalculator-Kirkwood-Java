@@ -1,4 +1,4 @@
-package edu.kirkwood.helpers;
+package edu.kirkwood.shared;
 
 import java.text.NumberFormat;
 import java.time.LocalDate;
@@ -9,6 +9,25 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class Helpers {
+
+    public static boolean isValidNumber(String num) {
+        try {
+            Double.parseDouble(num);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    public static boolean isValidInteger(String num) {
+        try {
+            Integer.parseInt(num);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
     // From Jason
     /**
      * Checks if a input string is not null or empty

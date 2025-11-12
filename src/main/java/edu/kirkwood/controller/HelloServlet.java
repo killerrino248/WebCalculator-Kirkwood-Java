@@ -1,11 +1,13 @@
-package edu.kirkwood.webcalculators;
+package edu.kirkwood.controller;
 
 import java.io.*;
 
-import edu.kirkwood.helpers.Helpers;
+import edu.kirkwood.shared.Helpers;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+
+import static edu.kirkwood.shared.Helpers.isValidNumber;
 
 @WebServlet(value = "/hello")
 public class HelloServlet extends HttpServlet {
@@ -50,13 +52,6 @@ public class HelloServlet extends HttpServlet {
         req.getRequestDispatcher("WEB-INF/hello.jsp").forward(req,resp);
     }
 
-    public static boolean isValidNumber(String num) {
-        try {
-            Double.parseDouble(num);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
-    }
+
 
 }
