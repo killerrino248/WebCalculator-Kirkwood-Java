@@ -91,6 +91,7 @@ public class JsonMovieDAO implements MovieDAO {
                     movie.setReleaseYear(result.getRelease_date().getYear());
                 }
                 movie.setPlot(result.getOverview());
+                movie.setPoster(result.getPoster_path());
                 movies.add(movie);
             });
             if(movieResponse.getTotal_pages() > currentPage) {

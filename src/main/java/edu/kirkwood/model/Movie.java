@@ -11,15 +11,17 @@ public class Movie implements Comparable<Movie> {
     private String title;
     private int releaseYear;
     private String plot;
+    private String poster;
 
     public Movie() {
     }
 
-    public Movie(String id, String title, int releaseYear, String plot) {
+    public Movie(String id, String title, int releaseYear, String plot,  String poster) {
         this.id = id;
         this.title = title;
         this.releaseYear = releaseYear;
         this.plot = plot;
+        this.poster = poster;
     }
 
     public String getId() {
@@ -54,6 +56,14 @@ public class Movie implements Comparable<Movie> {
         this.plot = plot;
     }
 
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
+    }
+
     @Override
     public String toString() {
         return "Games{" +
@@ -61,6 +71,7 @@ public class Movie implements Comparable<Movie> {
                 ", title='" + title + '\'' +
                 ", releaseYear=" + releaseYear +
                 ", plot=" + plot +
+                ", poster='" + poster + '\'' +
                 '}';
     }
 
